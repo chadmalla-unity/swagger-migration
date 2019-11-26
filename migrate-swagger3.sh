@@ -29,9 +29,10 @@ s/@ApiModelProperty(value/@Schema(description/g;\
 
 for FILE in $FILES
 do
-    echo "Migrating $FILE"
+	CMD="sed -i -e '${EXPRESSION}' '${FILE}'"
     echo ''
-    sed -i "" -e "$EXPRESSION" $FILE
+    echo "Migrating ${FILE} ..."
+    eval ${CMD}
 done
 
 echo
