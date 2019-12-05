@@ -35,12 +35,14 @@ do
     eval ${CMD}
 done
 
-echo
+echo ''
 echo 'Done!'
+echo ''
 echo 'Note that if you are using reponse parameter in the @ApiResponse annotation then your'
 echo 'codebase, you will need to enable [Add unambiguous imports on the fly] option in your IDE.'
 echo 'This is because @Content and @Schema are annotations that are being added for the first time.'
 echo ''
 echo 'This script is not a complete solution, it does not cover cases where the string is concatenated'
-echo 'by a +. It also does not handle every annotation change just the ones in my project so if your project.'
+echo 'by a plus sign.'
+echo ''
 echo 'If your project has annotations not in the script, please slack me to update the script. :)'
