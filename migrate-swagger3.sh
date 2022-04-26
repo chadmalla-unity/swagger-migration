@@ -17,6 +17,7 @@ s/io\.swagger\.annotations\.ApiModelProperty;/io\.swagger\.v3\.oas\.annotations\
 s/io\.swagger\.annotations\.ApiModelProperty;/io\.swagger\.v3\.oas\.annotations\.media\.Schema;/g;\
 \
 s/@Api$/@OpenAPIDefinition/g;\
+s/@Api(value = \"\([^)]*\)\"/@Tag(name = \"\1\"/g;\
 s/@Api(\"\([^)]*\)\"/@Tag(name = \"\1\"/g;\
 s/@ApiOperation(value = \"\([^,]*\)\",/@Operation(summary = \"\1\",/g;\
 s/@ApiOperation(value = /@Operation(summary = /g;\
