@@ -18,11 +18,14 @@ s/io\.swagger\.annotations\.ApiModelProperty;/io\.swagger\.v3\.oas\.annotations\
 \
 s/@Api$/@OpenAPIDefinition/g;\
 s/@Api(\"\([^)]*\)\"/@Tag(name = \"\1\"/g;\
+s/@ApiOperation(value = \"\([^,]*\)\",/@Operation(summary = \"\1\",/g;\
+s/@ApiOperation(value = /@Operation(summary = /g;\
 s/@ApiOperation(/@Operation(summary = /g;\
 s/@ApiResponse(code = \([0-9]\{3\}\), message = \"\(.*\)\", response = \(.*\.class)\)/@ApiResponse(responseCode = \"\1\", description = \"\2\", content = @Content(schema = @Schema(implementation = \3))/g;\
 s/@ApiResponse(code = \([0-9]\{3\}\), message = \"\([^)]*\)\")/@ApiResponse(responseCode = \"\1\", description = \"\2\")/g;\
 s/@ApiParam(required = \(.*\), value = \"\([^)]*\)\")/@Parameter(required = \1, description = \"\2\")/g;\
 s/@ApiParam(value = \"\(.*\)\", required = \([^)]*\))/@Parameter(required = \2, description = \"\1\")/g;\
+s/@ApiParam(\"\([^)]*\)\")/@Parameter(description = \"\1\")/g;\
 s/@ApiModelProperty(\"/@Schema(description = \"/g;\
 s/@ApiModelProperty(notes/@Schema(description/g;\
 s/@ApiModelProperty(value/@Schema(description/g;\
